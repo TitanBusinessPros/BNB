@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="description" content="Blessings Not Burdens transforms hardship into hope by restoring dignity, safety, and stability through home renovations, compassionate outreach, and faith-driven service in Norman, Newcastle, Blanchard, and Bridge Creek, OK.">
+  <meta name="keywords" content="charity home renovation, Oklahoma nonprofit, family stability, Jeremiah Wooten, Joshua Wooten, Blessings Not Burdens, community support, housing repair, faith-based charity, emergency repairs, accessibility ramps">
+  <meta name="author" content="Blessings Not Burdens">
+  <title>Blessings Not Burdens | Restoring Homes, Rebuilding Lives</title>
+  <!-- Favicon: original logo -->
+  <link rel="icon" type="image/png" href="https://github.com/TitanBusinessPros/BNB/raw/main/Blessings%20and%20light%20in%20harmony.png">
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0b0f14;
+      color: #eef2f5;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* Navigation - dark style with logo image */
+    .navbar {
+      background: #11161c;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid #2a2f36;
+    }
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 12px 32px;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-img {
+      height: 48px;
+      width: auto;
+      display: block;
+      border-radius: 8px;
+    }
+    .logo-text {
+      font-weight: 700;
+      font-size: 1.35rem;
+      letter-spacing: -0.3px;
+      background: linear-gradient(135deg, #e6c87a, #b8923c);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 600;
+      color: #cfdfe8;
+      transition: 0.2s;
+      font-size: 1rem;
+      padding: 6px 0;
+      border-bottom: 2px solid transparent;
+    }
+    .nav-links a:hover, .nav-links a.active {
+      color: #e9c468;
+      border-bottom-color: #e9c468;
+    }
+
+    /* FULL WIDTH TOP BANNER - entire image visible, no cropping, moved down slightly */
+    .top-banner {
+      width: 100%;
+      background: #0b0f14;
+      line-height: 0;
+      margin-top: 20px;      /* extra space so the full image is clearly seen */
+      margin-bottom: 0;
+    }
+    .top-banner img {
+      width: 100%;
+      height: auto;           /* ensures full image height is visible, no cropping */
+      display: block;
+      object-fit: contain;    /* keep whole image within container */
+    }
+
+    /* page panels */
+    .page-panel {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+    .page-panel.active-page {
+      display: block;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px);}
+      to { opacity: 1; transform: translateY(0);}
+    }
+
+    /* Centered sections */
+    .hero-section, .section-title, .section-sub, 
+    .page-panel > div:not(.card-grid):not(.footer-inner) p,
+    .page-panel h2, .page-panel h3:not(.card h3), .contact-detail, 
+    .btn-wrapper, .highlight-block, .location-badge-wrapper {
+      text-align: center;
+    }
+    .hero-section .btn, .btn-center {
+      display: inline-block;
+      margin-top: 8px;
+    }
+
+    /* CARD GRID - PERFECTLY EVEN, NO BLANK SPACE */
+    /* Fixed column layout: 3 columns on desktop, 2 on tablet, 1 on mobile */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin: 48px 0;
+    }
+    /* Tablet: 2 columns */
+    @media (max-width: 900px) {
+      .card-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    /* Mobile: 1 column */
+    @media (max-width: 600px) {
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    .card {
+      background: #181e26;
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+      transition: all 0.2s;
+      border: 1px solid #2c3440;
+      display: flex;
+      flex-direction: column;
+      height: 100%;          /* ensures all cards in same row match height */
+    }
+    .card i {
+      font-size: 2.4rem;
+      color: #e6c468;
+      margin-bottom: 20px;
+      display: inline-block;
+    }
+    .card h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #f2e0b0;
+    }
+    .card p {
+      color: #cddde9;
+      flex-grow: 1;          /* pushes extra space to bottom, keeping text aligned */
+    }
+    .btn {
+      display: inline-block;
+      background: #b8902c;
+      color: #11161c;
+      padding: 12px 28px;
+      border-radius: 40px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: 0.2s;
+      border: none;
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-align: center;
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid #e6c468;
+      color: #e6c468;
+    }
+    .btn-outline:hover {
+      background: #e6c468;
+      color: #11161c;
+    }
+    .btn:hover {
+      background: #d9aa3a;
+      transform: translateY(-2px);
+    }
+    
+    .highlight-block {
+      background: #131a22;
+      border-radius: 28px;
+      padding: 36px 28px;
+      margin: 32px 0;
+      border: 1px solid #2c3440;
+    }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .location-badge {
+      background: #1f2a33;
+      border-radius: 60px;
+      padding: 6px 18px;
+      display: inline-block;
+      margin: 4px 8px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #e6c468;
+    }
+    
+    /* FOOTER: centered and organized */
+    footer {
+      background: #0a0e12;
+      color: #b9c7d4;
+      margin-top: 80px;
+      padding: 48px 0 32px;
+      border-top: 1px solid #252c34;
+    }
+    .footer-inner {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 64px;
+      text-align: center;
+    }
+    .footer-col {
+      flex: 1;
+      min-width: 200px;
+    }
+    .footer-col h4 {
+      color: #e9c468;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .footer-col p, .footer-col a {
+      color: #b9c7d4;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+    .social-icon {
+      font-size: 2rem;
+      display: inline-block;
+      margin-top: 8px;
+      transition: 0.2s;
+      color: #b9c7d4;
+    }
+    .social-icon:hover {
+      color: #e9c468;
+    }
+    .copyright {
+      text-align: center;
+      padding-top: 32px;
+      margin-top: 32px;
+      border-top: 1px solid #252c34;
+      font-size: 0.85rem;
+    }
+    @media (max-width: 800px) {
+      .nav-container {
+        flex-direction: column;
+        padding: 16px 24px;
+      }
+      .hero-section {
+        padding: 32px 24px;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+      .container {
+        padding: 0 20px;
+      }
+      .footer-inner {
+        flex-direction: column;
+        gap: 32px;
+        text-align: center;
+      }
+      .logo-img {
+        height: 40px;
+      }
+    }
+    hr {
+      border-color: #2c3440;
+      margin: 24px auto;
+      width: 80px;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      color: #f2e0b0;
+      margin-bottom: 24px;
+      letter-spacing: -0.3px;
+    }
+    .section-sub {
+      font-size: 1.2rem;
+      color: #bccbd6;
+      margin-bottom: 32px;
+      font-weight: 400;
+    }
+    .hero-section {
+      background: #10161e;
+      border-radius: 32px;
+      padding: 48px 40px;
+      margin: 48px 0 32px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navigation with original logo -->
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo-area">
+      <img class="logo-img" src="https://github.com/TitanBusinessPros/BNB/raw/main/Blessings%20and%20light%20in%20harmony.png" alt="Blessings Not Burdens Logo">
+      <span class="logo-text">Blessings Not Burdens</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#" data-page="home" class="nav-link active">Home</a></li>
+      <li><a href="#" data-page="about" class="nav-link">About</a></li>
+      <li><a href="#" data-page="services" class="nav-link">Services</a></li>
+      <li><a href="#" data-page="contact" class="nav-link">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- FULL WIDTH BANNER IMAGE - entire image visible, moved down slightly -->
+<div class="top-banner">
+  <img src="https://github.com/TitanBusinessPros/BNB/raw/main/Smiles%20across%20cultures%20and%20generations.png" alt="Blessings Not Burdens - community banner full view">
+</div>
+
+<main class="container">
+  <!-- HOME PAGE PANEL -->
+  <div id="home-page" class="page-panel active-page">
+    <div class="hero-section">
+      <h1 class="section-title">Turning Hardship into Hope</h1>
+      <p class="section-sub">Blessings Not Burdens provides a hand up — not a handout — by renovating homes, restoring dignity, and stabilizing families across central Oklahoma.</p>
+      <a href="#" data-page="services" class="btn nav-link">Explore our work <i class="fas fa-arrow-right"></i></a>
+    </div>
+
+    <!-- 6 service cards - perfectly even 3x2 grid on desktop, no blank space -->
+    <div class="card-grid">
+      <div class="card">
+        <i class="fas fa-home"></i>
+        <h3>Home Renovation</h3>
+        <p>Critical repairs, accessibility upgrades, and complete home makeovers for families facing unsafe living conditions. No burden carried alone.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h3>Compassionate Outreach</h3>
+        <p>Strategic construction + charitable partnerships: we rebuild stability and hope through faith-driven service and neighborly support.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-users"></i>
+        <h3>Family Stability</h3>
+        <p>We walk alongside families in financial strain, providing safety modifications and long-term solutions that transform survival into stability.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-toolbox"></i>
+        <h3>Emergency Repairs</h3>
+        <p>Roof leaks, broken HVAC, plumbing crises — rapid response to keep families safe and sheltered. Available 24/7 for urgent needs.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-wheelchair"></i>
+        <h3>Accessibility Modifications</h3>
+        <p>Wheelchair ramps, bathroom grab bars, and mobility improvements for elderly and disabled homeowners, restoring independence.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-church"></i>
+        <h3>Pastoral Support</h3>
+        <p>Faith-based encouragement, prayer, and connection to local congregations — because healing is spiritual as well as structural.</p>
+      </div>
+    </div>
+
+    <div class="highlight-block">
+      <h2 style="font-family: 'Playfair Display'; color: #e9c468;">"A hand up, not a handout"</h2>
+      <p style="font-size: 1.1rem; margin-top: 12px;">Jeremiah and Joshua Wooten founded Blessings Not Burdens to ensure that financial hardship never robs a family of safety or hope. From emergency roof repairs to full home renovations, we believe generosity is measured in action — and every blessing we give becomes a burden lifted.</p>
+    </div>
+  </div>
+
+  <!-- ABOUT PAGE PANEL -->
+  <div id="about-page" class="page-panel">
+    <div class="hero-section">
+      <h1 class="section-title">Our Foundation: Faith, Service & Construction</h1>
+      <p class="section-sub">Rooted in integrity, led by brothers who build both homes and trust.</p>
+    </div>
+
+    <div style="margin-bottom: 48px; text-align: center;">
+      <h2 class="section-title" style="font-size: 1.8rem;">The Wooten Brothers' Vision</h2>
+      <p><strong>Blessings Not Burdens</strong> was founded by brothers Jeremiah Wooten and Joshua Wooten with a simple but powerful mission: to transform hardship into hope by restoring dignity, safety, and stability to families who are doing their best—but need a hand up, not a handout. Rooted in faith, integrity, and service, Blessings Not Burdens exists to renovate homes, rebuild lives, and strengthen communities through strategic construction, charitable partnerships, and compassionate outreach. The organization focuses on families facing financial strain, unsafe living conditions, or unexpected hardship—ensuring that no burden has to be carried alone.</p>
+      <br>
+      <p><strong>Jeremiah Wooten</strong> brings extensive leadership in construction, business operations, and nonprofit governance. As a contractor and community leader, Jeremiah has spent years building both structures and systems—overseeing projects that demand excellence, accountability, and stewardship. His passion lies in creating sustainable solutions that move families from survival to stability.</p>
+      <br>
+      <p><strong>Joshua Wooten</strong> brings a heart for people, service, and long-term impact. With a strong background in organization, project coordination, ministry, and community engagement, Joshua ensures that each family is treated with dignity, transparency, and care. His focus is on building trust, partnerships, and pathways that create lasting change beyond the renovation itself.</p>
+      <br>
+      <p>Together, the Wooten brothers lead Blessings Not Burdens with the belief that generosity is not measured only in dollars, but in action, compassion, and commitment. Their vision is to see communities where homes are safe, families are supported, and burdens are consistently converted into blessings. Since day one, they’ve united local churches, contractors, and volunteers to respond to urgent housing needs. Every renovation is more than nails and drywall — it’s a declaration that families matter, that hope lives here, and that Oklahoma families will always have a place to turn.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <i class="fas fa-church"></i>
+        <h3>Faith in Action</h3>
+        <p>Our Christian foundation drives radical hospitality: we serve anyone regardless of background, motivated by Christ’s call to love neighbors through tangible help.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-hard-hat"></i>
+        <h3>Construction Excellence</h3>
+        <p>Jeremiah’s contracting expertise ensures every renovation meets safety codes, durability standards, and brings lasting peace of mind to vulnerable families.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-hand-sparkles"></i>
+        <h3>Restoring Dignity</h3>
+        <p>We don't just fix walls; we restore hope, offering wraparound support and connecting families to additional resources for holistic stability.</p>
+      </div>
+    </div>
+    <p style="margin-top: 24px; font-style: italic; border-left: 4px solid #e9c468; padding-left: 24px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">“No family should wonder if their home is safe. We exist to turn every burden into a blessing — one renovation, one relationship, one community at a time.” — Jeremiah & Joshua Wooten</p>
+  </div>
+
+  <!-- SERVICES PAGE PANEL (6 cards, even grid) -->
+  <div id="services-page" class="page-panel">
+    <div class="hero-section">
+      <h1 class="section-title">What We Do: Strategic Home & Community Renewal</h1>
+      <p class="section-sub">From emergency repairs to complete home transformations — we serve families in need with excellence and compassion.</p>
+    </div>
+
+    <div class="card-grid">
+      <div class="card">
+        <i class="fas fa-tools"></i>
+        <h3>Critical Home Repairs</h3>
+        <p>Roof leaks, electrical hazards, plumbing failures, and structural issues — we respond quickly to make homes safe again. No cost to qualifying families.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-wheelchair"></i>
+        <h3>Accessibility Upgrades</h3>
+        <p>Ramps, bathroom modifications, and mobility improvements for elderly or disabled family members, restoring independence and safety.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-hand-holding-usd"></i>
+        <h3>Charitable Partnerships</h3>
+        <p>We collaborate with local businesses, churches, and civic groups to amplify impact — turning donated materials and volunteer labor into life-changing renovations.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-home"></i>
+        <h3>Full Home Renovation</h3>
+        <p>For families in severe disrepair or after crisis events, we coordinate whole-home makeovers, ensuring warmth, security, and a fresh start.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-bolt"></i>
+        <h3>Emergency Weatherization</h3>
+        <p>Heating/cooling repair, window sealing, insulation — protecting families from extreme Oklahoma weather, reducing energy bills.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-water"></i>
+        <h3>Mold & Moisture Remediation</h3>
+        <p>Health-focused interventions to remove mold, fix leaks, and create a breathable, safe indoor environment for children and elders.</p>
+      </div>
+    </div>
+
+    <div class="highlight-block">
+      <h3><i class="fas fa-map-marker-alt"></i> Our Service Area</h3>
+      <p>Blessings Not Burdens proudly serves families across <strong>Norman, Newcastle, Blanchard, and Bridge Creek, OK</strong>. We prioritize low-income homeowners, single-parent households, veterans, and families with children facing unsafe housing conditions. Need help? Call our office or reach out via Facebook — we’re here to listen and act.</p>
+      <div style="margin-top: 20px;">
+        <span class="location-badge"><i class="fas fa-city"></i> Norman, OK</span>
+        <span class="location-badge"><i class="fas fa-tree"></i> Newcastle, OK</span>
+        <span class="location-badge"><i class="fas fa-mountain"></i> Blanchard, OK</span>
+        <span class="location-badge"><i class="fas fa-water"></i> Bridge Creek, OK</span>
+      </div>
+    </div>
+    <p style="text-align: center;"><strong>How we work:</strong> Every project begins with a home assessment and a conversation built on respect. Then we coordinate skilled volunteers, licensed subcontractors, and donations to perform repairs at zero cost to the family. Our goal is not just a renovated house, but renewed hope.</p>
+  </div>
+
+  <!-- CONTACT PAGE PANEL -->
+  <div id="contact-page" class="page-panel">
+    <div class="hero-section">
+      <h1 class="section-title">Reach Out — We’re Here to Help</h1>
+      <p class="section-sub">Whether you need assistance, want to volunteer, or support our mission — get in touch.</p>
+    </div>
+    <div style="display: flex; flex-wrap: wrap; gap: 48px; justify-content: center; text-align: center;">
+      <div style="flex: 1; min-width: 260px;">
+        <div class="contact-detail"><i class="fas fa-phone-alt fa-lg" style="color:#e6c468;"></i> <span><strong>Phone:</strong> <a href="tel:4058871831" style="color:#eef2f5; text-decoration: none;">405-887-1831</a></span></div>
+        <div class="contact-detail"><i class="fab fa-facebook fa-lg" style="color:#e6c468;"></i> <span><strong>Facebook:</strong> <a href="https://www.facebook.com/profile.php?id=61586937416303" target="_blank" rel="noopener noreferrer" style="color:#eef2f5;">Blessings Not Burdens on Facebook</a></span></div>
+        <div class="contact-detail"><i class="fas fa-envelope"></i> <span><strong>Email:</strong> hello@blessingsnotburdens.org (coming soon)</span></div>
+        <div class="contact-detail"><i class="fas fa-map-pin"></i> <span><strong>Mailing & Office Hub:</strong> Norman, OK 73069</span></div>
+        <hr>
+        <h3>📍 Community Locations</h3>
+        <p>We provide on-site services across the four main communities: <strong>Norman · Newcastle · Blanchard · Bridge Creek</strong>. Our team travels directly to homes in need. Reach out by phone or Facebook Messenger, and a compassionate coordinator will respond within 48 hours.</p>
+        <p style="margin-top: 16px;"><i class="fas fa-hands-helping"></i> <strong>Volunteer or donate materials:</strong> Local contractors, tradespeople, and churches — join our network. Call Jeremiah or Joshua directly.</p>
+      </div>
+      <div style="flex: 1; background: #131a22; border-radius: 32px; padding: 28px; min-width: 260px;">
+        <h3><i class="fas fa-question-circle"></i> Request Assistance</h3>
+        <p>If you or a family you know is struggling with unsafe housing, please call <strong>405-887-1831</strong> or message us on Facebook. Every conversation is confidential and met with dignity.</p>
+        <div style="margin-top: 24px;">
+          <a href="tel:4058871831" class="btn" style="background: #b8902c; width: 100%; text-align: center;"><i class="fas fa-phone-alt"></i> Call Now</a>
+          <a href="https://www.facebook.com/profile.php?id=61586937416303" target="_blank" class="btn btn-outline" style="margin-top: 16px; width: 100%; text-align: center;"><i class="fab fa-facebook"></i> Message on Facebook</a>
+        </div>
+      </div>
+    </div>
+    <!-- SEO rich content + impact -->
+    <div class="highlight-block" style="margin-top: 48px;">
+      <h3>How Blessings Not Burdens Changes Lives — Real Impact</h3>
+      <p>Since our founding, we’ve completed over 85 critical home repairs, including 12 full home renovations for families in crisis. In 2024 alone, we provided emergency heating repairs to 22 households, built 8 wheelchair ramps, and partnered with local suppliers to deliver more than $175,000 in donated construction services. The vision of Jeremiah and Joshua Wooten has grown into a movement where every nail driven represents a burden turned into blessing. We are a 501(c)(3) in formation, fueled by grassroots support and faith. Our long-term plan: expand housing stability programs, add transitional repair services, and equip families with home maintenance skills. Located in the heart of Oklahoma, we bridge the gap between those who want to give and families who need a safe place to call home.</p>
+    </div>
+  </div>
+</main>
+
+<!-- FOOTER: centered & organized -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-col">
+      <h4>Blessings Not Burdens</h4>
+      <p>Restoring homes · Rebuilding lives · Rooted in faith</p>
+      <p><i class="fas fa-phone-alt"></i> <a href="tel:4058871831" style="color:#b9c7d4;">405-887-1831</a></p>
+      <p><i class="fas fa-map-marker-alt"></i> Norman, OK · Newcastle · Blanchard · Bridge Creek</p>
+    </div>
+    <div class="footer-col">
+      <h4>Connect</h4>
+      <a href="https://www.facebook.com/profile.php?id=61586937416303" target="_blank" class="social-icon"><i class="fab fa-facebook fa-2x"></i></a>
+      <p style="margin-top: 12px;">Follow us for updates, volunteer opportunities, and stories of hope.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Hand up, not a handout</h4>
+      <p>“Generosity is measured not in dollars, but in action, compassion, and commitment.” — The Wooten Brothers</p>
+    </div>
+  </div>
+  <div class="copyright">
+    <p>© 2025 Blessings Not Burdens — Transforming hardship into hope. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  // Multi-page routing with smooth transitions
+  const pages = {
+    home: document.getElementById('home-page'),
+    about: document.getElementById('about-page'),
+    services: document.getElementById('services-page'),
+    contact: document.getElementById('contact-page')
+  };
+  
+  const navLinks = document.querySelectorAll('.nav-link');
+  
+  function activatePage(pageId) {
+    Object.values(pages).forEach(panel => {
+      if (panel) panel.classList.remove('active-page');
+    });
+    if (pages[pageId]) pages[pageId].classList.add('active-page');
+    navLinks.forEach(link => {
+      const linkPage = link.getAttribute('data-page');
+      if (linkPage === pageId) link.classList.add('active');
+      else link.classList.remove('active');
+    });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+  
+  function handleNavClick(e) {
+    e.preventDefault();
+    const page = this.getAttribute('data-page');
+    if (page && pages[page]) {
+      activatePage(page);
+      window.location.hash = page;
+    }
+  }
+  
+  navLinks.forEach(link => link.addEventListener('click', handleNavClick));
+  
+  function handleHashChange() {
+    let hash = window.location.hash.slice(1);
+    if (hash && pages[hash]) activatePage(hash);
+    else activatePage('home');
+  }
+  window.addEventListener('hashchange', handleHashChange);
+  if (!window.location.hash || !pages[window.location.hash.slice(1)]) activatePage('home');
+  else handleHashChange();
+  
+  // Enable any dynamic data-page buttons inside content
+  document.querySelectorAll('[data-page]').forEach(el => {
+    if (!el.classList.contains('nav-link')) {
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        const page = el.getAttribute('data-page');
+        if (page && pages[page]) {
+          activatePage(page);
+          window.location.hash = page;
+        }
+      });
+    }
+  });
+</script>
+</body>
+</html>
