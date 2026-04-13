@@ -92,19 +92,19 @@
       border-bottom-color: #e9c468;
     }
 
-    /* FULL WIDTH TOP BANNER - entire image visible, no cropping, moved down slightly */
+    /* FULL WIDTH TOP BANNER - entire image visible, no cropping */
     .top-banner {
       width: 100%;
       background: #0b0f14;
       line-height: 0;
-      margin-top: 20px;      /* extra space so the full image is clearly seen */
+      margin-top: 20px;
       margin-bottom: 0;
     }
     .top-banner img {
       width: 100%;
-      height: auto;           /* ensures full image height is visible, no cropping */
+      height: auto;
       display: block;
-      object-fit: contain;    /* keep whole image within container */
+      object-fit: contain;
     }
 
     /* page panels */
@@ -132,21 +132,18 @@
       margin-top: 8px;
     }
 
-    /* CARD GRID - PERFECTLY EVEN, NO BLANK SPACE */
-    /* Fixed column layout: 3 columns on desktop, 2 on tablet, 1 on mobile */
+    /* CARD GRID */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 32px;
       margin: 48px 0;
     }
-    /* Tablet: 2 columns */
     @media (max-width: 900px) {
       .card-grid {
         grid-template-columns: repeat(2, 1fr);
       }
     }
-    /* Mobile: 1 column */
     @media (max-width: 600px) {
       .card-grid {
         grid-template-columns: 1fr;
@@ -161,7 +158,7 @@
       border: 1px solid #2c3440;
       display: flex;
       flex-direction: column;
-      height: 100%;          /* ensures all cards in same row match height */
+      height: 100%;
     }
     .card i {
       font-size: 2.4rem;
@@ -177,7 +174,7 @@
     }
     .card p {
       color: #cddde9;
-      flex-grow: 1;          /* pushes extra space to bottom, keeping text aligned */
+      flex-grow: 1;
     }
     .btn {
       display: inline-block;
@@ -233,7 +230,73 @@
       color: #e6c468;
     }
     
-    /* FOOTER: centered and organized */
+    /* FOUNDERS SECTION - only images, names, titles (no paragraphs) */
+    .founders-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 40px;
+      margin: 48px 0 32px;
+    }
+    @media (max-width: 750px) {
+      .founders-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+    }
+    .founder-card {
+      background: #181e26;
+      border-radius: 32px;
+      padding: 32px 28px 40px;
+      border: 1px solid #2c3440;
+      transition: transform 0.25s ease, box-shadow 0.3s;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    .founder-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 32px rgba(0, 0, 0, 0.4);
+      border-color: #e9c46860;
+    }
+    .founder-img-wrapper {
+      width: 220px;
+      height: 220px;
+      margin: 0 auto 24px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #e9c468;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      background: #0f141c;
+      transition: all 0.3s;
+    }
+    .founder-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+    .founder-card:hover .founder-img {
+      transform: scale(1.03);
+    }
+    .founder-name {
+      font-size: 1.9rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      color: #f2e0b0;
+      margin-bottom: 6px;
+    }
+    .founder-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #e9c468;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      border-bottom: 1px dashed #e9c46880;
+      padding-bottom: 4px;
+    }
+    /* No bio paragraphs - removed entirely */
+    
+    /* FOOTER */
     footer {
       background: #0a0e12;
       color: #b9c7d4;
@@ -304,6 +367,13 @@
       .logo-img {
         height: 40px;
       }
+      .founder-img-wrapper {
+        width: 170px;
+        height: 170px;
+      }
+      .founder-name {
+        font-size: 1.6rem;
+      }
     }
     hr {
       border-color: #2c3440;
@@ -332,11 +402,16 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       text-align: center;
     }
+    .story-text {
+      background: rgba(16, 22, 30, 0.5);
+      padding: 20px 24px;
+      border-radius: 28px;
+      margin-top: 20px;
+    }
   </style>
 </head>
 <body>
 
-<!-- Navigation with original logo -->
 <nav class="navbar">
   <div class="nav-container">
     <div class="logo-area">
@@ -352,7 +427,6 @@
   </div>
 </nav>
 
-<!-- FULL WIDTH BANNER IMAGE - entire image visible, moved down slightly -->
 <div class="top-banner">
   <img src="https://github.com/TitanBusinessPros/BNB/raw/main/Smiles%20across%20cultures%20and%20generations.png" alt="Blessings Not Burdens - community banner full view">
 </div>
@@ -366,7 +440,6 @@
       <a href="#" data-page="services" class="btn nav-link">Explore our work <i class="fas fa-arrow-right"></i></a>
     </div>
 
-    <!-- 6 service cards - perfectly even 3x2 grid on desktop, no blank space -->
     <div class="card-grid">
       <div class="card">
         <i class="fas fa-home"></i>
@@ -406,15 +479,48 @@
     </div>
   </div>
 
-  <!-- ABOUT PAGE PANEL -->
+  <!-- ABOUT PAGE PANEL: only images, names, titles (no descriptive paragraphs under images) -->
   <div id="about-page" class="page-panel">
     <div class="hero-section">
       <h1 class="section-title">Our Foundation: Faith, Service & Construction</h1>
       <p class="section-sub">Rooted in integrity, led by brothers who build both homes and trust.</p>
     </div>
 
-    <div style="margin-bottom: 48px; text-align: center;">
-      <h2 class="section-title" style="font-size: 1.8rem;">The Wooten Brothers' Vision</h2>
+    <!-- The Wooten Brothers' Vision section with IMAGES ONLY (no bio text under images) -->
+    <div style="margin-bottom: 16px;">
+      <h2 class="section-title" style="font-size: 2rem;">The Wooten Brothers' Vision</h2>
+      <p style="text-align: center; max-width: 800px; margin: 0 auto 20px auto; color: #cddde9;">Two brothers, one mission: transforming hardship into hope through renovation, relationship, and radical compassion.</p>
+    </div>
+
+    <!-- Founder Cards: actual images, names, titles - NO paragraphs below images -->
+    <div class="founders-grid">
+      <!-- Jeremiah Wooten Card -->
+      <div class="founder-card">
+        <div class="founder-img-wrapper">
+          <img class="founder-img" 
+               src="https://github.com/TitanBusinessPros/BNB/raw/main/Jermiah-co-founder.jpg" 
+               alt="Jeremiah Wooten, co-founder of Blessings Not Burdens"
+               onerror="this.onerror=null; this.src='https://placehold.co/400x400/1f2a33/e9c468?text=Jeremiah+Wooten';">
+        </div>
+        <div class="founder-name">Jeremiah Wooten</div>
+        <div class="founder-title">Co-Founder & Construction Director</div>
+      </div>
+
+      <!-- Joshua Wooten Card - using the correct image URL you provided -->
+      <div class="founder-card">
+        <div class="founder-img-wrapper">
+          <img class="founder-img" 
+               src="https://github.com/TitanBusinessPros/BNB/raw/main/Josh-co-founder.jpg" 
+               alt="Joshua Wooten, co-founder of Blessings Not Burdens"
+               onerror="this.onerror=null; this.src='https://placehold.co/400x400/1f2a33/e9c468?text=Joshua+Wooten';">
+        </div>
+        <div class="founder-name">Joshua Wooten</div>
+        <div class="founder-title">Co-Founder & Community Director</div>
+      </div>
+    </div>
+
+    <!-- Full story text (the written vision remains) -->
+    <div class="story-text">
       <p><strong>Blessings Not Burdens</strong> was founded by brothers Jeremiah Wooten and Joshua Wooten with a simple but powerful mission: to transform hardship into hope by restoring dignity, safety, and stability to families who are doing their best—but need a hand up, not a handout. Rooted in faith, integrity, and service, Blessings Not Burdens exists to renovate homes, rebuild lives, and strengthen communities through strategic construction, charitable partnerships, and compassionate outreach. The organization focuses on families facing financial strain, unsafe living conditions, or unexpected hardship—ensuring that no burden has to be carried alone.</p>
       <br>
       <p><strong>Jeremiah Wooten</strong> brings extensive leadership in construction, business operations, and nonprofit governance. As a contractor and community leader, Jeremiah has spent years building both structures and systems—overseeing projects that demand excellence, accountability, and stewardship. His passion lies in creating sustainable solutions that move families from survival to stability.</p>
@@ -424,6 +530,7 @@
       <p>Together, the Wooten brothers lead Blessings Not Burdens with the belief that generosity is not measured only in dollars, but in action, compassion, and commitment. Their vision is to see communities where homes are safe, families are supported, and burdens are consistently converted into blessings. Since day one, they’ve united local churches, contractors, and volunteers to respond to urgent housing needs. Every renovation is more than nails and drywall — it’s a declaration that families matter, that hope lives here, and that Oklahoma families will always have a place to turn.</p>
     </div>
 
+    <!-- Additional 3 cards about mission -->
     <div class="card-grid">
       <div class="card">
         <i class="fas fa-church"></i>
@@ -444,7 +551,7 @@
     <p style="margin-top: 24px; font-style: italic; border-left: 4px solid #e9c468; padding-left: 24px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">“No family should wonder if their home is safe. We exist to turn every burden into a blessing — one renovation, one relationship, one community at a time.” — Jeremiah & Joshua Wooten</p>
   </div>
 
-  <!-- SERVICES PAGE PANEL (6 cards, even grid) -->
+  <!-- SERVICES PAGE PANEL -->
   <div id="services-page" class="page-panel">
     <div class="hero-section">
       <h1 class="section-title">What We Do: Strategic Home & Community Renewal</h1>
@@ -523,7 +630,6 @@
         </div>
       </div>
     </div>
-    <!-- SEO rich content + impact -->
     <div class="highlight-block" style="margin-top: 48px;">
       <h3>How Blessings Not Burdens Changes Lives — Real Impact</h3>
       <p>Since our founding, we’ve completed over 85 critical home repairs, including 12 full home renovations for families in crisis. In 2024 alone, we provided emergency heating repairs to 22 households, built 8 wheelchair ramps, and partnered with local suppliers to deliver more than $175,000 in donated construction services. The vision of Jeremiah and Joshua Wooten has grown into a movement where every nail driven represents a burden turned into blessing. We are a 501(c)(3) in formation, fueled by grassroots support and faith. Our long-term plan: expand housing stability programs, add transitional repair services, and equip families with home maintenance skills. Located in the heart of Oklahoma, we bridge the gap between those who want to give and families who need a safe place to call home.</p>
@@ -531,7 +637,6 @@
   </div>
 </main>
 
-<!-- FOOTER: centered & organized -->
 <footer>
   <div class="footer-inner">
     <div class="footer-col">
@@ -551,12 +656,11 @@
     </div>
   </div>
   <div class="copyright">
-    <p>© 2025 Blessings Not Burdens — Transforming hardship into hope. All rights reserved.</p>
+    <p>© 2026 Blessings Not Burdens — Transforming hardship into hope. All rights reserved.</p>
   </div>
 </footer>
 
 <script>
-  // Multi-page routing with smooth transitions
   const pages = {
     home: document.getElementById('home-page'),
     about: document.getElementById('about-page'),
@@ -599,7 +703,6 @@
   if (!window.location.hash || !pages[window.location.hash.slice(1)]) activatePage('home');
   else handleHashChange();
   
-  // Enable any dynamic data-page buttons inside content
   document.querySelectorAll('[data-page]').forEach(el => {
     if (!el.classList.contains('nav-link')) {
       el.addEventListener('click', (e) => {
