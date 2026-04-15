@@ -7,11 +7,8 @@
   <meta name="keywords" content="charity home renovation, Oklahoma nonprofit, family stability, Jeremiah Wooten, Joshua Wooten, Blessings Not Burdens, community support, housing repair, faith-based charity, emergency repairs, accessibility ramps">
   <meta name="author" content="Blessings Not Burdens">
   <title>Blessings Not Burdens | Restoring Homes, Rebuilding Lives</title>
-  <!-- Favicon: original logo -->
   <link rel="icon" type="image/png" href="https://github.com/TitanBusinessPros/BNB/raw/main/Blessings%20and%20light%20in%20harmony.png">
-  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
   <style>
     * {
@@ -34,7 +31,6 @@
       padding: 0 32px;
     }
 
-    /* Navigation - dark style with logo image */
     .navbar {
       background: #11161c;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
@@ -92,7 +88,6 @@
       border-bottom-color: #e9c468;
     }
 
-    /* FULL WIDTH TOP BANNER - entire image visible, no cropping */
     .top-banner {
       width: 100%;
       background: #0b0f14;
@@ -107,7 +102,6 @@
       object-fit: contain;
     }
 
-    /* page panels */
     .page-panel {
       display: none;
       animation: fadeIn 0.3s ease;
@@ -120,7 +114,6 @@
       to { opacity: 1; transform: translateY(0);}
     }
 
-    /* Centered sections */
     .hero-section, .section-title, .section-sub, 
     .page-panel > div:not(.card-grid):not(.footer-inner) p,
     .page-panel h2, .page-panel h3:not(.card h3), .contact-detail, 
@@ -132,7 +125,6 @@
       margin-top: 8px;
     }
 
-    /* CARD GRID */
     .card-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -230,7 +222,6 @@
       color: #e6c468;
     }
     
-    /* FOUNDERS SECTION - only images, names, titles (no paragraphs) */
     .founders-grid {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -294,9 +285,71 @@
       border-bottom: 1px dashed #e9c46880;
       padding-bottom: 4px;
     }
-    /* No bio paragraphs - removed entirely */
     
-    /* FOOTER */
+    /* BOARD SECTION - 3 columns, 2 rows, easy to edit */
+    .board-section {
+      margin: 56px 0 48px;
+    }
+    .board-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      margin-top: 32px;
+    }
+    @media (max-width: 900px) {
+      .board-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+      }
+    }
+    @media (max-width: 600px) {
+      .board-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+    .board-card {
+      background: #181e26;
+      border-radius: 28px;
+      padding: 32px 24px 36px;
+      text-align: center;
+      border: 1px solid #2c3440;
+      transition: transform 0.2s ease, border-color 0.2s;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+    .board-card:hover {
+      transform: translateY(-5px);
+      border-color: #e9c46880;
+    }
+    .board-img-wrapper {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid #e9c468;
+      background: #0f141c;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+    .board-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+    .board-card:hover .board-img {
+      transform: scale(1.02);
+    }
+    .board-name {
+      font-size: 1.6rem;
+      font-weight: 700;
+      font-family: 'Playfair Display', serif;
+      color: #f2e0b0;
+      margin-top: 8px;
+      letter-spacing: -0.2px;
+    }
+    
     footer {
       background: #0a0e12;
       color: #b9c7d4;
@@ -374,6 +427,13 @@
       .founder-name {
         font-size: 1.6rem;
       }
+      .board-img-wrapper {
+        width: 150px;
+        height: 150px;
+      }
+      .board-name {
+        font-size: 1.4rem;
+      }
     }
     hr {
       border-color: #2c3440;
@@ -432,94 +492,56 @@
 </div>
 
 <main class="container">
-  <!-- HOME PAGE PANEL -->
+  <!-- HOME PAGE -->
   <div id="home-page" class="page-panel active-page">
     <div class="hero-section">
       <h1 class="section-title">Turning Hardship into Hope</h1>
       <p class="section-sub">Blessings Not Burdens provides a hand up — not a handout — by renovating homes, restoring dignity, and stabilizing families across central Oklahoma.</p>
       <a href="#" data-page="services" class="btn nav-link">Explore our work <i class="fas fa-arrow-right"></i></a>
     </div>
-
     <div class="card-grid">
-      <div class="card">
-        <i class="fas fa-home"></i>
-        <h3>Home Renovation</h3>
-        <p>Critical repairs, accessibility upgrades, and complete home makeovers for families facing unsafe living conditions. No burden carried alone.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-hand-holding-heart"></i>
-        <h3>Compassionate Outreach</h3>
-        <p>Strategic construction + charitable partnerships: we rebuild stability and hope through faith-driven service and neighborly support.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-users"></i>
-        <h3>Family Stability</h3>
-        <p>We walk alongside families in financial strain, providing safety modifications and long-term solutions that transform survival into stability.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-toolbox"></i>
-        <h3>Emergency Repairs</h3>
-        <p>Roof leaks, broken HVAC, plumbing crises — rapid response to keep families safe and sheltered. Available 24/7 for urgent needs.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-wheelchair"></i>
-        <h3>Accessibility Modifications</h3>
-        <p>Wheelchair ramps, bathroom grab bars, and mobility improvements for elderly and disabled homeowners, restoring independence.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-church"></i>
-        <h3>Pastoral Support</h3>
-        <p>Faith-based encouragement, prayer, and connection to local congregations — because healing is spiritual as well as structural.</p>
-      </div>
+      <div class="card"><i class="fas fa-home"></i><h3>Home Renovation</h3><p>Critical repairs, accessibility upgrades, and complete home makeovers for families facing unsafe living conditions. No burden carried alone.</p></div>
+      <div class="card"><i class="fas fa-hand-holding-heart"></i><h3>Compassionate Outreach</h3><p>Strategic construction + charitable partnerships: we rebuild stability and hope through faith-driven service and neighborly support.</p></div>
+      <div class="card"><i class="fas fa-users"></i><h3>Family Stability</h3><p>We walk alongside families in financial strain, providing safety modifications and long-term solutions that transform survival into stability.</p></div>
+      <div class="card"><i class="fas fa-toolbox"></i><h3>Emergency Repairs</h3><p>Roof leaks, broken HVAC, plumbing crises — rapid response to keep families safe and sheltered. Available 24/7 for urgent needs.</p></div>
+      <div class="card"><i class="fas fa-wheelchair"></i><h3>Accessibility Modifications</h3><p>Wheelchair ramps, bathroom grab bars, and mobility improvements for elderly and disabled homeowners, restoring independence.</p></div>
+      <div class="card"><i class="fas fa-church"></i><h3>Pastoral Support</h3><p>Faith-based encouragement, prayer, and connection to local congregations — because healing is spiritual as well as structural.</p></div>
     </div>
-
     <div class="highlight-block">
       <h2 style="font-family: 'Playfair Display'; color: #e9c468;">"A hand up, not a handout"</h2>
       <p style="font-size: 1.1rem; margin-top: 12px;">Jeremiah and Joshua Wooten founded Blessings Not Burdens to ensure that financial hardship never robs a family of safety or hope. From emergency roof repairs to full home renovations, we believe generosity is measured in action — and every blessing we give becomes a burden lifted.</p>
     </div>
   </div>
 
-  <!-- ABOUT PAGE PANEL: only images, names, titles (no descriptive paragraphs under images) -->
+  <!-- ABOUT PAGE -->
   <div id="about-page" class="page-panel">
     <div class="hero-section">
       <h1 class="section-title">Our Foundation: Faith, Service & Construction</h1>
       <p class="section-sub">Rooted in integrity, led by brothers who build both homes and trust.</p>
     </div>
 
-    <!-- The Wooten Brothers' Vision section with IMAGES ONLY (no bio text under images) -->
     <div style="margin-bottom: 16px;">
       <h2 class="section-title" style="font-size: 2rem;">The Wooten Brothers' Vision</h2>
       <p style="text-align: center; max-width: 800px; margin: 0 auto 20px auto; color: #cddde9;">Two brothers, one mission: transforming hardship into hope through renovation, relationship, and radical compassion.</p>
     </div>
 
-    <!-- Founder Cards: actual images, names, titles - NO paragraphs below images -->
     <div class="founders-grid">
-      <!-- Jeremiah Wooten Card -->
       <div class="founder-card">
         <div class="founder-img-wrapper">
-          <img class="founder-img" 
-               src="https://github.com/TitanBusinessPros/BNB/raw/main/Jermiah-co-founder.jpg" 
-               alt="Jeremiah Wooten, co-founder of Blessings Not Burdens"
-               onerror="this.onerror=null; this.src='https://placehold.co/400x400/1f2a33/e9c468?text=Jeremiah+Wooten';">
+          <img class="founder-img" src="https://github.com/TitanBusinessPros/BNB/raw/main/Jermiah-co-founder.jpg" alt="Jeremiah Wooten" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1f2a33/e9c468?text=Jeremiah+Wooten';">
         </div>
         <div class="founder-name">Jeremiah Wooten</div>
         <div class="founder-title">Co-Founder & Construction Director</div>
       </div>
-
-      <!-- Joshua Wooten Card - using the correct image URL you provided -->
       <div class="founder-card">
         <div class="founder-img-wrapper">
-          <img class="founder-img" 
-               src="https://github.com/TitanBusinessPros/BNB/raw/main/Josh-co-founder.jpg" 
-               alt="Joshua Wooten, co-founder of Blessings Not Burdens"
-               onerror="this.onerror=null; this.src='https://placehold.co/400x400/1f2a33/e9c468?text=Joshua+Wooten';">
+          <img class="founder-img" src="https://github.com/TitanBusinessPros/BNB/raw/main/Josh-co-founder.jpg" alt="Joshua Wooten" onerror="this.onerror=null; this.src='https://placehold.co/400x400/1f2a33/e9c468?text=Joshua+Wooten';">
         </div>
         <div class="founder-name">Joshua Wooten</div>
         <div class="founder-title">Co-Founder & Community Director</div>
       </div>
     </div>
 
-    <!-- Full story text (the written vision remains) -->
     <div class="story-text">
       <p><strong>Blessings Not Burdens</strong> was founded by brothers Jeremiah Wooten and Joshua Wooten with a simple but powerful mission: to transform hardship into hope by restoring dignity, safety, and stability to families who are doing their best—but need a hand up, not a handout. Rooted in faith, integrity, and service, Blessings Not Burdens exists to renovate homes, rebuild lives, and strengthen communities through strategic construction, charitable partnerships, and compassionate outreach. The organization focuses on families facing financial strain, unsafe living conditions, or unexpected hardship—ensuring that no burden has to be carried alone.</p>
       <br>
@@ -530,67 +552,81 @@
       <p>Together, the Wooten brothers lead Blessings Not Burdens with the belief that generosity is not measured only in dollars, but in action, compassion, and commitment. Their vision is to see communities where homes are safe, families are supported, and burdens are consistently converted into blessings. Since day one, they’ve united local churches, contractors, and volunteers to respond to urgent housing needs. Every renovation is more than nails and drywall — it’s a declaration that families matter, that hope lives here, and that Oklahoma families will always have a place to turn.</p>
     </div>
 
-    <!-- Additional 3 cards about mission -->
+    <!-- ============================================= -->
+    <!-- BOARD MEMBERS (EDIT HERE)                     -->
+    <!-- Replace each image URL and name as needed.    -->
+    <!-- Six cards = two rows of three columns.        -->
+    <!-- ============================================= -->
+    <div class="board-section">
+      <h2 class="section-title" style="font-size: 2rem;">Meet The Board For Blessings Not Burdens</h2>
+      <div class="board-grid">
+        <!-- Card 1 -->
+        <div class="board-card">
+          <div class="board-img-wrapper">
+            <img class="board-img" src="https://github.com/TitanBusinessPros/BNB/raw/main/Caleb-Padilla.jpg" alt="Board member 1">
+          </div>
+          <div class="board-name">Caleb Padilla</div>
+        </div>
+        <!-- Card 2 -->
+        <div class="board-card">
+          <div class="board-img-wrapper">
+            <img class="board-img" src="https://github.com/TitanBusinessPros/BNB/raw/main/Sesily-Wooten.jpg" alt="Board member 2">
+          </div>
+          <div class="board-name">Sesily Wooten</div>
+        </div>
+        <!-- Card 3 -->
+        <div class="board-card">
+          <div class="board-img-wrapper">
+            <img class="board-img" src="https://github.com/TitanBusinessPros/BNB/raw/main/Cody-Pyle.jpg" alt="Board member 3">
+          </div>
+          <div class="board-name">Cody Pyle</div>
+        </div>
+        <!-- Card 4 -->
+        <div class="board-card">
+          <div class="board-img-wrapper">
+            <img class="board-img" src="https://github.com/TitanBusinessPros/BNB/raw/main/Hope-Wooten.jpg" alt="Board member 4">
+          </div>
+          <div class="board-name">Hope Wooten</div>
+        </div>
+        <!-- Card 5 -->
+        <div class="board-card">
+          <div class="board-img-wrapper">
+            <img class="board-img" src="https://github.com/TitanBusinessPros/BNB/raw/main/Lindsey-Bunch.jpg" alt="Board member 5">
+          </div>
+          <div class="board-name">Lindsey Bunch</div>
+        </div>
+        <!-- Card 6 -->
+        <div class="board-card">
+          <div class="board-img-wrapper">
+            <img class="board-img" src="https://github.com/TitanBusinessPros/BNB/raw/main/Bill-Kinser.jpg" alt="Board member 6">
+          </div>
+          <div class="board-name">Bill Kinser</div>
+        </div>
+      </div>
+    </div>
+
     <div class="card-grid">
-      <div class="card">
-        <i class="fas fa-church"></i>
-        <h3>Faith in Action</h3>
-        <p>Our Christian foundation drives radical hospitality: we serve anyone regardless of background, motivated by Christ’s call to love neighbors through tangible help.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-hard-hat"></i>
-        <h3>Construction Excellence</h3>
-        <p>Jeremiah’s contracting expertise ensures every renovation meets safety codes, durability standards, and brings lasting peace of mind to vulnerable families.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-hand-sparkles"></i>
-        <h3>Restoring Dignity</h3>
-        <p>We don't just fix walls; we restore hope, offering wraparound support and connecting families to additional resources for holistic stability.</p>
-      </div>
+      <div class="card"><i class="fas fa-church"></i><h3>Faith in Action</h3><p>Our Christian foundation drives radical hospitality: we serve anyone regardless of background, motivated by Christ’s call to love neighbors through tangible help.</p></div>
+      <div class="card"><i class="fas fa-hard-hat"></i><h3>Construction Excellence</h3><p>Jeremiah’s contracting expertise ensures every renovation meets safety codes, durability standards, and brings lasting peace of mind to vulnerable families.</p></div>
+      <div class="card"><i class="fas fa-hand-sparkles"></i><h3>Restoring Dignity</h3><p>We don't just fix walls; we restore hope, offering wraparound support and connecting families to additional resources for holistic stability.</p></div>
     </div>
     <p style="margin-top: 24px; font-style: italic; border-left: 4px solid #e9c468; padding-left: 24px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">“No family should wonder if their home is safe. We exist to turn every burden into a blessing — one renovation, one relationship, one community at a time.” — Jeremiah & Joshua Wooten</p>
   </div>
 
-  <!-- SERVICES PAGE PANEL -->
+  <!-- SERVICES PAGE -->
   <div id="services-page" class="page-panel">
     <div class="hero-section">
       <h1 class="section-title">What We Do: Strategic Home & Community Renewal</h1>
       <p class="section-sub">From emergency repairs to complete home transformations — we serve families in need with excellence and compassion.</p>
     </div>
-
     <div class="card-grid">
-      <div class="card">
-        <i class="fas fa-tools"></i>
-        <h3>Critical Home Repairs</h3>
-        <p>Roof leaks, electrical hazards, plumbing failures, and structural issues — we respond quickly to make homes safe again. No cost to qualifying families.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-wheelchair"></i>
-        <h3>Accessibility Upgrades</h3>
-        <p>Ramps, bathroom modifications, and mobility improvements for elderly or disabled family members, restoring independence and safety.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-hand-holding-usd"></i>
-        <h3>Charitable Partnerships</h3>
-        <p>We collaborate with local businesses, churches, and civic groups to amplify impact — turning donated materials and volunteer labor into life-changing renovations.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-home"></i>
-        <h3>Full Home Renovation</h3>
-        <p>For families in severe disrepair or after crisis events, we coordinate whole-home makeovers, ensuring warmth, security, and a fresh start.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-bolt"></i>
-        <h3>Emergency Weatherization</h3>
-        <p>Heating/cooling repair, window sealing, insulation — protecting families from extreme Oklahoma weather, reducing energy bills.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-water"></i>
-        <h3>Mold & Moisture Remediation</h3>
-        <p>Health-focused interventions to remove mold, fix leaks, and create a breathable, safe indoor environment for children and elders.</p>
-      </div>
+      <div class="card"><i class="fas fa-tools"></i><h3>Critical Home Repairs</h3><p>Roof leaks, electrical hazards, plumbing failures, and structural issues — we respond quickly to make homes safe again. No cost to qualifying families.</p></div>
+      <div class="card"><i class="fas fa-wheelchair"></i><h3>Accessibility Upgrades</h3><p>Ramps, bathroom modifications, and mobility improvements for elderly or disabled family members, restoring independence and safety.</p></div>
+      <div class="card"><i class="fas fa-hand-holding-usd"></i><h3>Charitable Partnerships</h3><p>We collaborate with local businesses, churches, and civic groups to amplify impact — turning donated materials and volunteer labor into life-changing renovations.</p></div>
+      <div class="card"><i class="fas fa-home"></i><h3>Full Home Renovation</h3><p>For families in severe disrepair or after crisis events, we coordinate whole-home makeovers, ensuring warmth, security, and a fresh start.</p></div>
+      <div class="card"><i class="fas fa-bolt"></i><h3>Emergency Weatherization</h3><p>Heating/cooling repair, window sealing, insulation — protecting families from extreme Oklahoma weather, reducing energy bills.</p></div>
+      <div class="card"><i class="fas fa-water"></i><h3>Mold & Moisture Remediation</h3><p>Health-focused interventions to remove mold, fix leaks, and create a breathable, safe indoor environment for children and elders.</p></div>
     </div>
-
     <div class="highlight-block">
       <h3><i class="fas fa-map-marker-alt"></i> Our Service Area</h3>
       <p>Blessings Not Burdens proudly serves families across <strong>Norman, Newcastle, Blanchard, and Bridge Creek, OK</strong>. We prioritize low-income homeowners, single-parent households, veterans, and families with children facing unsafe housing conditions. Need help? Call our office or reach out via Facebook — we’re here to listen and act.</p>
@@ -604,7 +640,7 @@
     <p style="text-align: center;"><strong>How we work:</strong> Every project begins with a home assessment and a conversation built on respect. Then we coordinate skilled volunteers, licensed subcontractors, and donations to perform repairs at zero cost to the family. Our goal is not just a renovated house, but renewed hope.</p>
   </div>
 
-  <!-- CONTACT PAGE PANEL -->
+  <!-- CONTACT PAGE -->
   <div id="contact-page" class="page-panel">
     <div class="hero-section">
       <h1 class="section-title">Reach Out — We’re Here to Help</h1>
